@@ -13,15 +13,26 @@ import stat
 import json
 import os
 import re
+from xml.parsers.expat import ParserCreate, ExpatError, errors
 
 
 def get_url(url):
     '''get_url returns a result from a url using requests module
     :param url: the url to retrieve
     '''
-    response = requests.get(url)
+    
+    response = requests.get(url)            
     if response.status_code == 200:
-        result = xmltodict.parse(response.text)
+        success = False
+        resp_text = response.text
+        while not success:
+            try:
+                result = xmltodict.parse(resp_text)
+                success = True
+            except ExpatError as e:
+                lines = resp_text.split('\n')
+                lines[e.lineno-1] = lines[e.lineno-1][:e.offset] + lines[e.lineno-1][e.offset+1:]
+                resp_text = '\n'.join(lines)
         if "rst" in result:
             result = result['rst']
         if "err" in result:
