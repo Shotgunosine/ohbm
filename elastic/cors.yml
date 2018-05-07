@@ -1,3 +1,15 @@
 http.cors.allow-origin: "*" 
 http.cors.enabled: true 
 http.cors.allow-headers: "X-Requested-With, Content-Type, Content-Length, Authorization"
+
+xpack.security.transport.ssl.key: /usr/share/elasticsearch/config/ssl/search.ohbm-openscience.org/privkey1.pem
+xpack.security.transport.ssl.certificate: /usr/share/elasticsearch/config/ssl/search.ohbm-openscience.org/fullchain1.pem
+xpack.security.transport.ssl.certificate_authorities: /usr/share/elasticsearch/config/ssl/search.ohbm-openscience.org/chain1.pem
+xpack.security.transport.ssl.enabled: true
+xpack.security.transport.ssl.verification_mode: certificate
+
+xpack.security.http.ssl.enabled: true
+xpack.security.http.ssl.key: /usr/share/elasticsearch/config/ssl/search.ohbm-openscience.org/privkey1.pem
+xpack.security.http.ssl.certificate: /usr/share/elasticsearch/config/ssl/search.ohbm-openscience.org/fullchain1.pem
+xpack.security.http.ssl.certificate_authorities: /usr/share/elasticsearch/config/ssl/search.ohbm-openscience.org/chain1.pem
+

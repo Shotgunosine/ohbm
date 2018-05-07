@@ -1,0 +1,9 @@
+server.ssl.certificate: /usr/share/kibanda/config/ssl/search.ohbm-openscience.org/fullchain1.pem
+server.ssl.key: /usr/share/kibanda/config/ssl/search.ohbm-openscience.org/privkey1.pem
+server.ssl.enabled: true
+
+elasticsearch.url: "https://search.ohbm-openscience.org:9200"
+elasticsearch.ssl.verificationMode: certificate
+elasticsearch.ssl.key: /usr/share/kibanda/config/ssl/search.ohbm-openscience.org/privkey1.pem
+elasticsearch.ssl.certificate: /usr/share/kibanda/config/ssl/search.ohbm-openscience.org/fullchain1.pem
+
