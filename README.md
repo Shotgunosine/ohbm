@@ -13,3 +13,11 @@ In this fork of Vanessa Sochat's Python API for the OHBM abstract database we ha
 
 ![Kibana/Elastic Search](doc/screenshot.png "Kibana/Elastic Search screenshot")
 
+To get https support first get let's encrpyt certs:
+```
+wget https://dl.eff.org/certbot-auto
+chmod 755 certbot-auto
+./certbot-auto certonly
+```
+
+Then copy the certs from `/etc/letsencrypt/archive/[url.com]` to `elastic/ssl` and `kibana/ssl`. From there you should just be able to rebuild the kibana and elasticsearch containers and be good to go.
